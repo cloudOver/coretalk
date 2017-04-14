@@ -1,0 +1,13 @@
+Source: coretalk
+Section: contrib
+Priority: extra
+Maintainer: Maciej Nabozny <mn@mnabozny.pl>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: http://cloudover.org/
+
+Package: coretalk
+Architecture: all
+Depends: corecluster, genisoimage
+Description: CloudInit support for CoreCluster
+

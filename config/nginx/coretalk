@@ -1,0 +1,9 @@
+server {
+    listen 8600;
+    server_name 0.0.0.0;
+
+    location / {
+        include         uwsgi_params;
+        uwsgi_pass      unix:/var/run/uwsgi/app/coretalk/socket;
+    }
+}
