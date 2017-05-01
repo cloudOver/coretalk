@@ -6,7 +6,7 @@ from distutils.command.install import install as _install
 setup(
   name = 'coretalk',
   packages = find_packages(exclude=['config']),
-  version = '17.04.01',
+  version = '17.04.02',
   description = 'CloudInit support for CoreCluster IaaS',
   author = 'Marta and Maciej Nabozny',
   author_email = 'marta.nabozny@gmail.com',

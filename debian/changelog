@@ -1,3 +1,10 @@
+coretalk (17.04.02) stable; urgency=low
+
+  * Userdata.create adds new line at end of script
+
+ -- Maciej Nabozny <maciej.nabozny@cloudover.io> 14 Apr 2017 10:00:00 +0200
+
+
 coretalk (17.01.02) stable; urgency=low
 
   * AGPL3 license

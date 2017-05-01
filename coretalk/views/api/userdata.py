@@ -56,13 +56,16 @@ def create(context, name, data, convert_from=None):
     userdata = UserData()
     userdata.name = name
     if convert_from is None:
-        userdata.data = data
+        if data.endswith('\n'):
+            userdata.data = data
+        else:
+            userdata.data = data + '\n'
     elif convert_from == 'native':
-        userdata.data = '#cloud-config\n' + pyaml.dumps(data)
+        userdata.data = '#cloud-config\n' + pyaml.dumps(data) + '\n'
     elif convert_from == 'pyaml':
-        userdata.data = '#cloud-config\n' + pyaml.dumps(pyaml.loads(data))
+        userdata.data = '#cloud-config\n' + pyaml.dumps(pyaml.loads(data)) + '\n'
     elif convert_from == 'json':
-        userdata.data = '#cloud-config\n' + pyaml.dumps(simplejson.loads(data))
+        userdata.data = '#cloud-config\n' + pyaml.dumps(simplejson.loads(data)) + '\n'
     else:
         raise CoreException('unsupported_format')
 
