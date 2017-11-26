@@ -38,7 +38,7 @@ from coretalk.models.coretalk.sshkey import SshKey
 from corenetwork.utils.logger import log
 
 
-def resolve_ip(auth_hash, vm_ip):
+def resolve_ip(auth_hash, auth_seed, vm_ip):
     addr = netaddr.IPAddress(vm_ip)
     for network in NetworkPool.objects.all():
         if addr >= network.to_ipnetwork().network and addr <= network.to_ipnetwork().broadcast:
