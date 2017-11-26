@@ -38,13 +38,13 @@ from coretalk.models.coretalk.sshkey import SshKey
 from corenetwork.utils.logger import log
 
 
-def resolve_ip(auth_hash, auth_seed, vm_ip):
+def resolve_ip(auth_hash, vm_ip):
     addr = netaddr.IPAddress(vm_ip)
     for network in NetworkPool.objects.all():
         if addr >= network.to_ipnetwork().network and addr <= network.to_ipnetwork().broadcast:
             if network.mode == 'routed':
                 lease = Lease.objects.filter(subnet__network_pool_id=network.id).get(address=str(addr-2))
-                lease.vm.node.check_auth(auth_hash, auth_seed)
+                lease.vm.node.check_auth(auth_hash)
                 return lease
     raise Exception('lease_not_found')
 
