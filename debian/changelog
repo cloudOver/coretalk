@@ -1,4 +1,11 @@
-coretalk (17.04.02) stable; urgency=low
+coretalk (17.11.01) stable; urgency=low
+
+  * Updated to new node API
+
+ -- Maciej Nabozny <maciej.nabozny@cloudover.io> 14 Apr 2017 10:00:00 +0200
+
+
+coretalk (17.04.03) stable; urgency=low
 
   * Userdata.create adds new line at end of script
 
