@@ -8,7 +8,7 @@ install:
 	cp -r config/* $(DESTDIR)/etc/coretalk/
 	ln -s /etc/coretalk/uwsgi/coretalk.ini $(DESTDIR)/etc/uwsgi/apps-enabled/coretalk.ini
 	ln -s /etc/coretalk/nginx/coretalk $(DESTDIR)/etc/nginx/sites-enabled/coretalk
-	python setup.py install --root=$(DESTDIR)
+	python3 setup.py install --root=$(DESTDIR)
 
 egg:
 	python setup.py sdist bdist_egg
