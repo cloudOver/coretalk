@@ -142,7 +142,7 @@ def get_ssh_key_formats(request, auth_hash, auth_seed, vm_ip, id):
     if vm == None:
         return HttpResponse('none')
 
-    print "openssh-key"
+    return HttpResponse("openssh-key")
 
 
 def get_ssh_key_formats(request, auth_hash, auth_seed, vm_ip, id):
